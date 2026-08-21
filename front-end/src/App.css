@@ -1,0 +1,370 @@
+/* --- ESTILOS GENERALES Y RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #080808;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: #080808;
+  display: flex;
+  flex-direction: column;
+}
+
+.center-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 25px;
+}
+
+/* --- CABECERA Y HERO --- */
+.hero-section {
+  background-color: #000;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #1a1a1a;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  padding: 0 20px;
+}
+
+.hero-small {
+  height: 120px;
+}
+
+.logo-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  letter-spacing: 2px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 24px;
+  border-radius: 30px;
+  border: 1px solid #222;
+  background: #111;
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+/* --- GRILLA DE INICIO (6 TARJETAS) --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 50px 8%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #121212;
+  border-radius: 16px;
+  padding: 35px 25px;
+  text-align: center;
+  border: 1px solid #1f1f1f;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #8b5cf6;
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
+  background: #161616;
+}
+
+.card .icon {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+}
+
+.card:hover .icon {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* --- PANELES CINEMATOGRÁFICOS --- */
+.cinematic-panel {
+  background: #101010;
+  width: 100%;
+  max-width: 520px;
+  padding: 45px;
+  border-radius: 16px;
+  border: 1px solid #1a1a1a;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.list-panel {
+  max-width: 650px;
+}
+
+.cinematic-panel h2 {
+  margin-bottom: 25px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+.success-icon {
+  font-size: 4.5rem;
+  margin-bottom: 15px;
+}
+
+/* --- FORMULARIOS --- */
+.form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-layout label {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-layout input,
+.form-layout select {
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-layout input:focus,
+.form-layout select:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+  background: #1c1c1c;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+/* --- LISTAS Y ELEMENTOS --- */
+.search-filter-input {
+  width: 100%;
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.search-filter-input:focus {
+  border-color: #8b5cf6;
+}
+
+.item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #161616;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  transition: border-color 0.3s;
+}
+
+.list-item:hover {
+  border-color: #333;
+}
+
+.item-details strong {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.item-details small {
+  color: #888;
+  display: block;
+  margin-top: 4px;
+}
+
+.price-tag {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.no-data {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+/* --- BOTONES --- */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #7c4dff;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #999;
+  border: 1px solid #333;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-outline:hover {
+  background: #1f1f1f;
+  color: #fff;
+  border-color: #444;
+}
+
+.btn-edit {
+  background: transparent;
+  color: #a78bfa;
+  border: 1px solid #8b5cf6;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-edit:hover {
+  background: #8b5cf6;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+.btn-danger {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 4%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-section {
+    height: 220px;
+  }
+}
